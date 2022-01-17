@@ -6,6 +6,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+## Tentang App
+Aplikasi ini dibuat untuk syarat nilai UAS
+
+# Cara install app
+- Buat database *contoh : "realcount"
+- Buka project di app editor *Vscode
+- Setting nama database di file .env *sesuaikan dengan nama database yang dibuat
+- jalankan migration + seeder *untuk membuat tabel dan nilai default dengan cara ketikan pada command prompt atau git bash -> php artisan migrate:fresh --seed
 
 ## About Laravel
 
