@@ -7,6 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 ## Tentang App
+
 Aplikasi ini dibuat untuk syarat nilai UAS
 
 # Cara install app
