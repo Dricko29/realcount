@@ -28,7 +28,7 @@
                 @endif
                 <div class="card-body">  
                     <div class="pb-4">
-                        <a href="tps/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
+                        <a href="/admin/tps/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
                     </div>
                     @if ($tpsData->count())
                         
@@ -50,8 +50,8 @@
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->lokasi }}</td>
                                     <td> <center>
-                                        <a href="/tps/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                        <form action="/tps/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
+                                        <a href="/admin/tps/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                        <form action="/admin/tps/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>

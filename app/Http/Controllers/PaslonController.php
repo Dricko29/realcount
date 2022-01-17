@@ -62,7 +62,7 @@ class PaslonController extends Controller
 
         ]);
         Paslon::create($validateData);
-        return redirect('paslon')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/paslon')->with('status','Data berhasil ditambahkan');
     }
 
     /**
@@ -129,7 +129,7 @@ class PaslonController extends Controller
 
         ]);
         Paslon::where('id', $id)->update($validateData);
-        return redirect('paslon')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/paslon')->with('status','Data berhasil ditambahkan');
     }
 
     /**
@@ -142,6 +142,6 @@ class PaslonController extends Controller
     {
         $paslon = Paslon::find($id);
         $paslon->delete();
-        return redirect('paslon')->with('status', 'Data berhasil dihapus');
+        return redirect('admin/paslon')->with('status', 'Data berhasil dihapus');
     }
 }

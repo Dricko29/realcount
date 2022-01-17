@@ -9,7 +9,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="/tps">Tps</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/tps">Tps</a></li>
                         <li class="breadcrumb-item active">Add</li>
                     </ol>
                 </div>
@@ -25,10 +25,10 @@
                     <div class="row">
                         <div class="col-xl-8">
                             <div class="pb-4">
-                                <a href="/tps" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
+                                <a href="/admin/tps" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                             </div>
                             <h4 class="card-title mb-4">Input Data Tps</h4>
-                            <form class="needs-validation" action="/tps" method="post">
+                            <form class="needs-validation" action="/admin/tps" method="post">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama TPS</label>

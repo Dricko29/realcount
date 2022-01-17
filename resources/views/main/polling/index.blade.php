@@ -33,7 +33,7 @@
                 @endif
                 <div class="card-body">  
                     <div class="pb-4">
-                        <a href="admin/polling/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
+                        <a href="/admin/polling/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
                     </div>
                     @if ($polling->count())
                         <h4 class="card-title">Data Polling</h4>

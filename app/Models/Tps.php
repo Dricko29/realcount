@@ -25,4 +25,9 @@ class Tps extends Model
         return $this->hasMany(Dpt::class);
     }
 
+    public function paslon(){
+
+        return $this->hasManyThrough(Polling::class, Paslon::class);
+    }
+
 }

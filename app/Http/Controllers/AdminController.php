@@ -13,6 +13,14 @@ class AdminController extends Controller
 {
     public function index(){
 
+        // $data = Tps::has('polling')->withSum('polling' ,'jumlah_suara')->get()->load(['polling']);
+        // // return $data;
+        // foreach($data as $item){
+
+        //     echo "<li>$item->nama :$item->polling_sum_jumlah_suara</li>";
+
+        // };
+
         $data = [
             'title' => 'Admin Panel',
         ];

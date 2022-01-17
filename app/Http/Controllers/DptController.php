@@ -67,7 +67,7 @@ class DptController extends Controller
             'total_dpt' => $request->dpt_perempuan + $request->dpt_laki
 
         ]);
-        return redirect('dpt')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/dpt')->with('status','Data berhasil ditambahkan');
     }
 
     /**
@@ -136,7 +136,7 @@ class DptController extends Controller
 
 
         Dpt::where('id',$id)->update($validateData);
-        return redirect('dpt')->with('status','Data berhasil diupdate');
+        return redirect('admin/dpt')->with('status','Data berhasil diupdate');
     }
 
     /**
@@ -149,6 +149,6 @@ class DptController extends Controller
     {
         $dpt = Dpt::find($id);
         $dpt->delete();
-        return redirect('dpt')->with('status','Data Berhasil Dihapus');
+        return redirect('admin/dpt')->with('status','Data Berhasil Dihapus');
     }
 }

@@ -65,7 +65,7 @@ class PollingController extends Controller
         ]);
 
         Polling::create($validatedData);
-        return redirect('polling')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/polling')->with('status','Data berhasil ditambahkan');
         
 
 
@@ -138,7 +138,7 @@ class PollingController extends Controller
             'paslon_id.required' => 'lokasi tidak boleh kosong !!!',
         ]);
         Polling::where('id', $id)->update($validateData);
-        return redirect('polling')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/polling')->with('status','Data berhasil ditambahkan');
 
     }
 
@@ -153,6 +153,6 @@ class PollingController extends Controller
         $polling = Polling::find($id);
         $polling->delete();
 
-        return redirect('polling')->with('status','Data Berhasil Dihapus');
+        return redirect('admin/polling')->with('status','Data Berhasil Dihapus');
     }
 }

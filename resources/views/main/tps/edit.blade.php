@@ -28,7 +28,7 @@
                                 <a href="/tps" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                             </div>
                             <h4 class="card-title mb-4">Edit Data TPS</h4>
-                            <form class="needs-validation" action="/tps/{{ $tps->id }}" method="POST">
+                            <form class="needs-validation" action="/admin/tps/{{ $tps->id }}" method="POST">
                                 @method('put')
                                 @csrf
                                 <div class="mb-3">

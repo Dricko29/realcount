@@ -82,7 +82,7 @@ class SuaraController extends Controller
             'suara_tidak_sah' => $request->suara_tidak_sah,
             'golput' => $golput
         ]);
-        return redirect('suara')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/suara')->with('status','Data berhasil ditambahkan');
     }
 
     /**
@@ -159,7 +159,7 @@ class SuaraController extends Controller
             'suara_tidak_sah' => $request->suara_tidak_sah,
             'golput' => $golput
         ]);
-        return redirect('suara')->with('status','Data berhasil update');
+        return redirect('admin/suara')->with('status','Data berhasil update');
 
     }
 
@@ -174,6 +174,6 @@ class SuaraController extends Controller
         $suara = Suara::find($id);
         $suara->delete();
 
-        return redirect('suara')->with('status','Data Berhasil Dihapus');
+        return redirect('admin/suara')->with('status','Data Berhasil Dihapus');
     }
 }

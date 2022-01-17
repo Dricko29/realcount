@@ -14,4 +14,9 @@ class Paslon extends Model
     public function polling(){
         return $this->hasMany(Polling::class);
     }
+
+    public function tps(){
+
+        return $this->hasManyThrough(Tps::class, Polling::class);
+    }
 }

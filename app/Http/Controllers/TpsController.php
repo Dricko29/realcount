@@ -19,7 +19,7 @@ class TpsController extends Controller
             'title' => 'Tps - RCPDES',
             'tpsData' => $tps
         ];
-        return \view('main.tps.index',$data);
+        return view('main.tps.index',$data);
     }
 
     /**
@@ -52,7 +52,7 @@ class TpsController extends Controller
             'lokasi.required' => 'lokasi tidak boleh kosong !!!',
         ]);
         Tps::create($validateData);
-        return redirect('tps')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/tps')->with('status','Data berhasil ditambahkan');
     }
 
     /**
@@ -111,7 +111,7 @@ class TpsController extends Controller
             'lokasi.required' => 'lokasi tidak boleh kosong !!!',
         ]);
         Tps::where('id', $id)->update($validateData);
-        return redirect('tps')->with('status','Data berhasil ditambahkan');
+        return redirect('admin/tps')->with('status','Data berhasil ditambahkan');
 
 
     }
@@ -127,6 +127,6 @@ class TpsController extends Controller
         $tps = Tps::find($id);
         $tps->delete();
 
-        return redirect('tps')->with('status','Data Berhasil Dihapus');
+        return redirect('admin/tps')->with('status','Data Berhasil Dihapus');
     }
 }
