@@ -9,7 +9,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="/suara">Suara</a></li>
+                        <li class="breadcrumb-item"><a href="admin/suara">Suara</a></li>
                         <li class="breadcrumb-item active">Edit</li>
                     </ol>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="pb-4">
-                            <a href="/suara" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
+                            <a href="admin/suara" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                         </div>
                     </div> 
                     <h4 class="card-title mb-4">Edit Data Suara</h4>
@@ -34,7 +34,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                 @endif
-                    <form class="needs-validation" action="/suara/{{ $suara->id }}" method="post">
+                    <form class="needs-validation" action="admin/suara/{{ $suara->id }}" method="post">
                         @method('PUT')
                         @csrf
 

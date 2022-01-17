@@ -33,7 +33,7 @@
                 @endif
                 <div class="card-body">  
                     <div class="pb-4">
-                        <a href="polling/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
+                        <a href="admin/polling/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
                     </div>
                     @if ($polling->count())
                         <h4 class="card-title">Data Polling</h4>
@@ -43,7 +43,7 @@
                             <tr>
                                 <th>Tps</th>
                                 <th>Paslon</th>
-                                <th>Jumlah Suara</th>
+                                <th style="width: 200px">Jumlah Suara</th>
                                 <th style="width: 120px">Aksi</th>
                             </tr>
                             </thead>
@@ -56,8 +56,8 @@
                                         <td>{{ $item->jumlah_suara }}</td>
 
                                         <td> <center>
-                                            <a href="/polling/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                            <form action="/polling/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
+                                            <a href="/admin/polling/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                            <form action="/admin/polling/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
                                                 @method('delete')
                                                 @csrf
                                                 <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>

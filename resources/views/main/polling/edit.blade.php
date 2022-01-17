@@ -9,7 +9,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="/polling">Polling</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/polling">Polling</a></li>
                         <li class="breadcrumb-item active">Edit</li>
                     </ol>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="pb-4">
-                            <a href="/polling" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
+                            <a href="/admin/polling" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                         </div>
                     </div> 
                     <h4 class="card-title mb-4">Edit Data Polling</h4>
@@ -34,7 +34,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                 @endif
-                    <form class="needs-validation" action="/polling/{{ $polling->id }}" method="post">
+                    <form class="needs-validation" action="/admin/polling/{{ $polling->id }}" method="post">
                         @method('PUT')
                         @csrf
 

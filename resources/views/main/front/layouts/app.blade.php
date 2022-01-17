@@ -3,7 +3,7 @@
 <html lang="en">
 
     
-<!-- Mirrored from themesbrand.com/skote-django/layouts/pages-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Dec 2021 12:20:02 GMT -->
+<!-- Mirrored from themesbrand.com/skote-django/layouts/layouts-hori-boxed-width.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Dec 2021 12:19:31 GMT -->
 <head>
         
         <meta charset="utf-8" />
@@ -12,13 +12,13 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('') }}assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{ asset('')}}assets/images/favicon.ico">
         <!-- DataTables -->
         <link href="{{ asset('')}}assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="{{ asset('')}}assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Responsive datatable examples -->
-        <link href="{{ asset('')}}assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />    
+        <link href="{{ asset('')}}assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Bootstrap Css -->
         <link href="{{ asset('')}}assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -29,37 +29,14 @@
 
     </head>
 
-    <body data-sidebar="dark">
-
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <body data-topbar="dark" data-layout="horizontal" data-layout-size="boxed">
 
         <!-- Begin page -->
         <div id="layout-wrapper">
 
-            
-            <header id="page-topbar">
-                @include('layouts.partials.header')
-            </header>
-
-            <!-- ========== Left Sidebar Start ========== -->
-                
-            <div class="vertical-menu">
-
-                <div data-simplebar class="h-100">
-
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        @include('layouts.partials.menu')
-                    </div>
-                    <!-- Sidebar -->
-                </div>
-            </div>
-            <!-- Left Sidebar End -->
+            @include('main.front.layouts.partialshome.header')
     
-
-            
-
+            @include('main.front.layouts.partialshome.menu')
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
@@ -67,13 +44,11 @@
 
                 <div class="page-content">
                     <div class="container-fluid">
-
                         @yield('content')
                         
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
-
                 
                 <footer class="footer">
                     <div class="container-fluid">
@@ -101,7 +76,14 @@
         <script src="{{ asset('')}}assets/libs/metismenu/metisMenu.min.js"></script>
         <script src="{{ asset('')}}assets/libs/simplebar/simplebar.min.js"></script>
         <script src="{{ asset('')}}assets/libs/node-waves/waves.min.js"></script>
-        <!-- Required datatable js -->
+
+        <script src="{{ asset('')}}assets/js/pages/dashboard.init.js"></script>
+        <script src="{{ asset('') }}assets/highchart/code/highcharts.js"></script>
+        <script src="{{ asset('') }}assets/highchart/code/modules/exporting.js"></script>
+        <script src="{{ asset('') }}assets/highchart/code/modules/export-data.js"></script>
+        <script src="{{ asset('') }}assets/highchart/code/modules/accessibility.js"></script>
+
+                <!-- Required datatable js -->
         <script src="{{ asset('')}}assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="{{ asset('')}}assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
         <!-- Buttons examples -->
@@ -123,17 +105,9 @@
         <script src="{{ asset('/') }}assets/libs/parsleyjs/parsley.min.js"></script>
         <script src="{{ asset('') }}assets/js/pages/form-validation.init.js"></script>
 
-        <!-- jquery step -->
-        <script src="{{ asset('') }}assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
-
-        <!-- form wizard init -->
-        <script src="{{ asset('') }}assets/js/pages/form-wizard.init.js"></script>
-
         <script src="{{ asset('')}}assets/js/app.js"></script>
         @yield('script')
-
-
     </body>
 
-<!-- Mirrored from themesbrand.com/skote-django/layouts/pages-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Dec 2021 12:20:02 GMT -->
+<!-- Mirrored from themesbrand.com/skote-django/layouts/layouts-hori-boxed-width.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Dec 2021 12:19:31 GMT -->
 </html>

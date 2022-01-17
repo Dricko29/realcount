@@ -13,7 +13,7 @@ class RegisterController extends Controller
         return view ('auth.register');
     }
 
-        public function store(Request $request){
+    public function store(Request $request){
         
         $validated = $request->validate([
             'name' => 'required',
@@ -24,7 +24,7 @@ class RegisterController extends Controller
             'username.required' => 'username tidak boleh kosong',
             'username.unique' => 'username sudah ada',
             'username.min' => 'minimal panjang username tiga karakter',
-            'password.min' => 'minimal panjang password tiga karakter',
+            'password.min' => 'minimal panjang password 6 karakter',
             'password.required' => 'password tidak boleh kosong',
         ]);
 

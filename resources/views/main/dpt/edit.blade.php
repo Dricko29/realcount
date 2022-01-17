@@ -9,7 +9,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="/dpt">Dpt</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/dpt">Dpt</a></li>
                         <li class="breadcrumb-item active">Edit</li>
                     </ol>
                 </div>
@@ -25,10 +25,10 @@
                     <div class="row">
                         <div class="col-xl-8">
                             <div class="pb-4">
-                                <a href="/dpt" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
+                                <a href="/admin/dpt" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                             </div>
                             <h4 class="card-title mb-4">Edit Data DPT</h4>
-                            <form class="needs-validation" action="/dpt/{{ $dpt->id }}" method="post">
+                            <form class="needs-validation" action="/admin/dpt/{{ $dpt->id }}" method="post">
                                 @method('put')
                                 @csrf
                                 <div class="mb-3">

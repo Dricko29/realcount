@@ -13,8 +13,6 @@ class AdminController extends Controller
 {
     public function index(){
 
-        // \dd($dpt);
-
         $data = [
             'title' => 'Admin Panel',
         ];

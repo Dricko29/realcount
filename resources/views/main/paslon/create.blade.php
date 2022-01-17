@@ -9,7 +9,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="/paslon">Paslon</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/paslon">Paslon</a></li>
                         <li class="breadcrumb-item active">Add</li>
                     </ol>
                 </div>
@@ -25,10 +25,10 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="pb-4">
-                                <a href="/paslon" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
+                                <a href="/admin/paslon" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                             </div>
                             <h4 class="card-title mb-4">Input Paslon</h4>
-                            <form class="needs-validation" action="/paslon" method="post">
+                            <form class="needs-validation" action="/admin/paslon" method="post">
                                 @csrf
 
                                 <div class="mb-3">

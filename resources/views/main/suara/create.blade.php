@@ -9,7 +9,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="/suara">Suara</a></li>
+                        <li class="breadcrumb-item"><a href="admin/suara">Suara</a></li>
                         <li class="breadcrumb-item active">Add</li>
                     </ol>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="pb-4">
-                            <a href="/suara" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
+                            <a href="admin/suara" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                         </div>
                     </div> 
                     <h4 class="card-title mb-4">Input Data Suara Tidak Sah</h4>
@@ -34,11 +34,11 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                 @endif
-                    <form class="needs-validation" action="/suara" method="post">
+                    <form class="needs-validation" action="admin/suara" method="post">
                         @csrf
                             <div class="mb-3">
                                 <label for="tps" class="form-label">Tps</label>
-                                <select class="form-select " required name="tps_id" id="tps">
+                                <select class="form-select @error('tps_id') is-invalid @enderror" name="tps_id" id="tps">
                                     <option selected disabled value="">Pilih Tps...</option>
                                     @foreach ($tps as $item)
     
@@ -50,12 +50,31 @@
                                     
                                     @endforeach
                                 </select>
+                                    @error('tps_id')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
     
                             </div>
     
                             <div class="mb-3">
                                 <label for="suara_tidak_sah" class="form-label">Jumlah Suara Tidak sah</label>
-                                <input type="number" class="form-control " required id="suara_tidak_sah" name="suara_tidak_sah" placeholder="masukan jumlah suara tidak sah">
+                                <input type="number" class="form-control @error('suara_tidak_sah') is-invalid @enderror " value="{{ old('suara_tidak_sah') }}" id="suara_tidak_sah" name="suara_tidak_sah" placeholder="masukan jumlah suara tidak sah">
+                                @error('suara_tidak_sah')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="golput" class="form-label">Jumlah Suara Tidak sah</label>
+                                <input type="hidden" class="form-control" id="golput" name="golput" placeholder="masukan jumlah suara tidak sah">
+                                {{-- @error('golput')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                @enderror --}}
                             </div>
 
                         <div>

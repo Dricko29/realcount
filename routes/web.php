@@ -1,6 +1,6 @@
 <?php
 
-use GuzzleHttp\Middleware;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DptController;
 use App\Http\Controllers\TpsController;
@@ -11,7 +11,7 @@ use App\Http\Controllers\SuaraController;
 use App\Http\Controllers\PaslonController;
 use App\Http\Controllers\PollingController;
 use App\Http\Controllers\RegisterController;
-use App\Models\Polling;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,11 @@ use App\Models\Polling;
 
 
 Route::get('/',[HomeController::class, 'index']);
-Route::get('/admin',[AdminController::class, 'index'])->middleware('auth');
+Route::get('/tps',[HomeController::class, 'tps'])->middleware('auth');
+Route::get('/dpt',[HomeController::class, 'dpt'])->middleware('auth');
+Route::get('/paslon',[HomeController::class, 'paslon'])->middleware('auth');
+
+Route::get('/admin',[AdminController::class, 'index'])->middleware('admin');
 
 // login
 Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
@@ -40,8 +44,8 @@ Route::post('/register', [RegisterController::class,'store']);
 
 
 
-Route::resource('tps', TpsController::class)->middleware('auth');
-Route::resource('dpt', DptController::class)->middleware('auth');
-Route::resource('paslon', PaslonController::class)->middleware('auth');
-Route::resource('polling', PollingController::class)->middleware('auth');
-Route::resource('suara', SuaraController::class)->middleware('auth');
+Route::resource('admin/tps', TpsController::class)->middleware('admin');
+Route::resource('admin/dpt', DptController::class)->middleware('admin');
+Route::resource('admin/paslon', PaslonController::class)->middleware('admin');
+Route::resource('admin/polling', PollingController::class)->middleware('admin');
+Route::resource('admin/suara', SuaraController::class)->middleware('admin');

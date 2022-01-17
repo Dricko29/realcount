@@ -7,7 +7,7 @@ use App\Models\Suara;
 use App\Models\Tps;
 use App\Models\Dpt;
 use App\Models\Polling;
-use Illuminate\Database\Eloquent\Builder;
+
 
 class SuaraController extends Controller
 {
@@ -50,17 +50,32 @@ class SuaraController extends Controller
      */
     public function store(Request $request)
     {
+
         // jumlah dpt per tps
-        $dpt= Dpt::where('tps_id',$request->tps_id)->get();
-        $totalDpt = $dpt[0]->dpt_perempuan+$dpt[0]->dpt_laki;
+        if ($request->tps_id != null) {
+            # code...
+            $dpt= Dpt::where('tps_id',$request->tps_id)->get();
+            $totalDpt = $dpt[0]->dpt_perempuan+$dpt[0]->dpt_laki;
+    
+            // jumlah polling per tps
+            $tps = Polling::where('tps_id' , $request->tps_id)->sum('jumlah_suara');
+    
+            // suara tidak sah per tps;
+            $tidakSah = $request->suara_tidak_sah;
+            $suaraMasuk = $tps + $tidakSah;
+            $golput = $totalDpt - $suaraMasuk;
+        }
 
-        // jumlah polling per tps
-        $tps = Polling::where('tps_id' , $request->tps_id)->sum('jumlah_suara');
 
-        // suara tidak sah per tps;
-        $tidakSah = $request->suara_tidak_sah;
-        $suaraMasuk = $tps + $tidakSah;
-        $golput = $totalDpt - $suaraMasuk;
+        $request->validate([
+            'tps_id' => 'required|unique:Suaras',
+            'suara_tidak_sah' => 'required',
+        ],[
+
+            'tps_id.required' => 'nama tps tidak boleh kosong !!!',
+            'tps_id.unique' => 'nama sudah ada',
+            'suara_tidak_sah.required' => 'lokasi tidak boleh kosong !!!',
+        ]);
 
         Suara::create([
             'tps_id' => $request->tps_id,
@@ -122,12 +137,30 @@ class SuaraController extends Controller
         $tidakSah = $request->suara_tidak_sah;
         $suaraMasuk = $tps + $tidakSah;
         $golput = $totalDpt - $suaraMasuk;
+
+        $suara = Suara::find($id);
+        $rules=[
+            'tps_id.required' => 'nama tps tidak boleh kosong !!!',
+            'suara_tidak_sah.required' => 'lokasi tidak boleh kosong !!!',
+        ];
+
+        if ($request->tps_id != $suara->tps_id) {
+            $rules['tps_id'] ='required|unique:Suaras';
+        }
+        $request->validate($rules,[
+
+            'tps_id.required' => 'nama tps tidak boleh kosong !!!',
+            'tps_id.unique' => 'nama sudah ada',
+            'suara_tidak_sah.required' => 'lokasi tidak boleh kosong !!!',
+        ]);
+
         Suara::where('id', $id)->update([
             'tps_id' => $request->tps_id,
             'suara_tidak_sah' => $request->suara_tidak_sah,
             'golput' => $golput
         ]);
         return redirect('suara')->with('status','Data berhasil update');
+
     }
 
     /**

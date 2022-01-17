@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('main.front.layouts.app')
 @section('content')
     <div class="row">
         <div class="col-12">
@@ -8,7 +7,7 @@
 
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
                         {{-- <li class="breadcrumb-item active">Starter Page</li> --}}
                     </ol>
                 </div>
@@ -20,16 +19,7 @@
     <div class="row">
         <div class="col-xl-12">
             <div class="card">
-                @if (session('status'))
-                        <div class="alert bg-success alert-dismissible fade show" role="alert">
-                            {{ session('status') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                @endif
                 <div class="card-body">  
-                    <div class="pb-4">
-                        <a href="admin/paslon/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
-                    </div>
                     @if ($paslon->count())
                         
                     
@@ -43,8 +33,6 @@
                             <th>Nama Paslon</th>
                             <th>Jenis Kelamin</th>
                             <th>Alamat</th>
-                            <th>Kontak</th>
-                            <th style="width: 120px">Aksi</th>
                         </tr>
                         </thead>
 
@@ -55,16 +43,6 @@
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
-                                    <td>{{ $item->kontak }}</td>
-                                    <td> <center>
-                                        <a href="/adminpaslon/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                        <form action="/adminpaslon/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                                        </form>
-                                    </center>
-                                    </td>
                                 </tr>
                                 
                             @endforeach

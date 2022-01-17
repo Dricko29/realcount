@@ -33,7 +33,7 @@
                 @endif
                 <div class="card-body">  
                     <div class="pb-4">
-                        <a href="suara/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
+                        <a href="admin/suara/create" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-plus"></i></a>
                     </div>
                     @if ($suara->count())
                         <h4 class="card-title">Data suara</h4>
@@ -55,8 +55,8 @@
                                         <td>{{ $item->suara_tidak_sah }}</td>
                                         <td>{{ $item->golput }}</td>
                                         <td> <center>
-                                            <a href="/suara/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                            <form action="/suara/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
+                                            <a href="admin/suara/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                            <form action="admin/suara/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
                                                 @method('delete')
                                                 @csrf
                                                 <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
