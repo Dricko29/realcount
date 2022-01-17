@@ -12,10 +12,10 @@ Aplikasi ini dibuat untuk syarat nilai UAS
 
 # Cara install app
 - Buat database *contoh : "realcount"
-- Buka project di app editor *Vscode
-- Setting nama database di file .env *sesuaikan dengan nama database yang dibuat
+- Buka project di app editor   *Vscode
+- Setting nama database di file .env   *sesuaikan dengan nama database yang dibuat
 - jalankan migration + seeder *untuk membuat tabel dan nilai default dengan cara ketikan pada command prompt atau git bash
-- -> php artisan migrate:fresh --seed
+- php artisan migrate:fresh --seed
 - Jalankan development serve
 - Buka browser
 - Jalankan App
