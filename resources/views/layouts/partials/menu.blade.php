@@ -1,16 +1,6 @@
     <ul class="metismenu list-unstyled" id="side-menu">
         <li class="menu-title" key="t-menu">Menu</li>
 
-        {{-- <li>
-            <a href="javascript: void(0);" class="has-arrow waves-effect"">
-                <i class="fas fa-server"></i>
-                <span key="t-data-master">Data Master</span>
-            </a>
-            <ul class="sub-menu" aria-expanded="false">
-                <li><a href="/tps" key="t-data-tps">Data TPS</a></li>
-                <li><a href="/dpt" key="t-data-dpt">Data DPT</a></li>
-            </ul>
-        </li> --}}
         <li>
             <a href="/admin/tps" class="waves-effect">
                 <i class="fas fa-person-booth"></i>
@@ -40,5 +30,16 @@
                 <i class="fas fa-list"></i>
                 <span key="t-suara">Suara</span>
             </a>
+        </li>
+
+        <li>
+            <a href="javascript:void(0)" class="has-arrow waves-effect"">
+                <i class="fas fa-server"></i>
+                <span key="t-rekap">Rekap</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="/admin/rekap/suara" key="t-data-suara">Data Suara</a></li>
+                <li><a href="/dpt" key="t-data-dpt">Data DPT</a></li>
+            </ul>
         </li>
     </ul>

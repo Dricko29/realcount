@@ -7,6 +7,7 @@ use App\Http\Controllers\TpsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RekapController;
 use App\Http\Controllers\SuaraController;
 use App\Http\Controllers\PaslonController;
 use App\Http\Controllers\PollingController;
@@ -43,6 +44,8 @@ Route::get('/register', [RegisterController::class,'index'])->middleware('guest'
 Route::post('/register', [RegisterController::class,'store']);
 
 
+// rekap
+Route::get('/admin/rekap/suara', [RekapController::class, 'suara'])->middleware('admin');
 
 Route::resource('admin/tps', TpsController::class)->middleware('admin');
 Route::resource('admin/dpt', DptController::class)->middleware('admin');
