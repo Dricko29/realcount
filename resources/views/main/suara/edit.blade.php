@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="pb-4">
-                            <a href="admin/suara" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
+                            <a href="/admin/suara" class="btn shadow-sm rounded-circle btn-primary"><i class="fas fa-arrow-left"></i></a>
                         </div>
                     </div> 
                     <h4 class="card-title mb-4">Edit Data Suara</h4>
@@ -34,7 +34,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                 @endif
-                    <form class="needs-validation" action="admin/suara/{{ $suara->id }}" method="post">
+                    <form class="needs-validation" action="/admin/suara/{{ $suara->id }}" method="post">
                         @method('PUT')
                         @csrf
 

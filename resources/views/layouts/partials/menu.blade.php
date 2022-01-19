@@ -39,7 +39,6 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="/admin/rekap/suara" key="t-data-suara">Data Suara</a></li>
-                <li><a href="/dpt" key="t-data-dpt">Data DPT</a></li>
             </ul>
         </li>
     </ul>

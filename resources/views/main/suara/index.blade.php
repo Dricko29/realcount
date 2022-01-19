@@ -55,8 +55,8 @@
                                         <td>{{ $item->suara_tidak_sah }}</td>
                                         <td>{{ $item->golput }}</td>
                                         <td> <center>
-                                            <a href="admin/suara/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                            <form action="admin/suara/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
+                                            <a href="/admin/suara/{{ $item->id }}/edit" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                            <form action="/admin/suara/{{ $item->id }}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ?')">
                                                 @method('delete')
                                                 @csrf
                                                 <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
