@@ -13,12 +13,19 @@ class HomeController extends Controller
 {
     public function index(){ 
 
+
+
         $dpt = Dpt::sum('dpt_perempuan')+Dpt::sum('dpt_laki');
         $polling = Polling::sum('jumlah_suara');
         $suara = Suara::sum('suara_tidak_sah')+Suara::sum('golput');
         $totalSuara = $polling+$suara;
 
-        $suaraMasuk = round($totalSuara / $dpt * 100,2);
+        if($totalSuara > 0){
+            $suaraMasuk = round($totalSuara / $dpt * 100,2);
+        }else{
+            $suaraMasuk = 0;
+        }
+
 
         // pie
         $dataPie = "";
