@@ -46,6 +46,7 @@ Route::post('/register', [RegisterController::class,'store']);
 
 // rekap
 Route::get('/admin/rekap/suara', [RekapController::class, 'suara'])->middleware('admin');
+Route::get('/admin/rekap/tps', [RekapController::class, 'tps'])->middleware('admin');
 
 Route::resource('admin/tps', TpsController::class)->middleware('admin');
 Route::resource('admin/dpt', DptController::class)->middleware('admin');

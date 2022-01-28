@@ -15,13 +15,20 @@ class RekapController extends Controller
 
         $suara= Tps::has('polling')->withSum('polling' ,'jumlah_suara')->get()->load(['polling','suara']);
 
-
         $data = [
             'title' => 'Rekap',
-            'data' => $suara
+            'data' => $suara,
         ];
         return view('main.rekap.suara',$data);
 
 
+    }
+    public function tps(){
+        $tps = Tps::with('polling','polling.paslon')->withSum('polling','jumlah_suara')->get();
+        $data = [
+            'title' => 'Rekap',
+            'suara' => $tps,
+        ];
+        return view('main.rekap.tps',$data);
     }
 }
